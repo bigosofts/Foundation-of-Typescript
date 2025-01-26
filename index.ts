@@ -1,27 +1,45 @@
-//Typescript Tuples
+//Typescript Enums Type
 
-//typescript tuple is a fixed length, ordered collection of elements where each element has a specific type
+//one way to make user role
+//------------------------------------
+// const ADMIN = 0;
+// const READ_ONLY = 1;
+// const WRITE_ONLY = 2;
+// const READ_WRITE = 3;
 
-let employe = [123, "john", 2000, true]; //infered as an array
+// const user = {
+//   name: "John",
+//   age: 30,
+//   gender: "male",
+//   role: ADMIN,
+// };
+//-----------------------------------------
 
-let employe2: (string | number | boolean)[] = [123, "john", 2000, true, 200]; //its array type of string ,boolean or string.
+//using Enum
+//----------------------------------------
+enum Roles {
+  ADMIN,
+  READ_ONLY,
+  WRITE_ONLY,
+  READ_WRITE,
+} // default index 0,1,2,3
 
-//we can add any number of element based on type
+enum Roles2 {
+  ADMIN = 100,
+  READ_ONLY = 200,
+  WRITE_ONLY = 300,
+  READ_WRITE = 400,
+} //our custom index
 
-let employe3: [number, string, number, boolean] = [123, "john", 2000, true]; //but it is infered as an Tuple because we set type in ordered formation
+console.log(Roles)
+const user = {
+  name: "John",
+  age: 30,
+  gender: "male",
+  role: Roles2.ADMIN,
+};
+if (user.role === Roles2.ADMIN) {
+  console.log("This user is admin");
+}
 
-//we can only add 4 elements with specific type, five elements are not allowed
-
-console.log(employe3);
-
-//one thing need to memorize
-
-//we get errors in tuple when using reassignment
-
-employe3 = [123, "limon", 200, true]; //its allright in ts
-
-employe3 = ["hello", "limon", 200, true]; //its error because it does not match type order
-
-employe3 = [123, "limon", 200, true, "exceed"]; //its error because element exceed to 5 other than 4
-
-employe3.push(100); // but this is not give you error in push method although tuple allow 4 element ... So its exception
+//we can access enum bidirectionally like Roles2.ADMIN or Roles2[100]
