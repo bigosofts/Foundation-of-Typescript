@@ -1,11 +1,11 @@
-//variable in Typescript
-//datatype is infered during initialization in typescript
-//only take letter, digit, underscrore and dollar sign for variable naming
-//first character not be a digit
-//variable names are case sensitive
-//typescript resereved name can not be used
-var num_one_1$ = 100;
-num_one_1$ = "hello23"; //error
-console.log(num_one_1$);
-var str = "Hello World!";
-console.log(str);
+//datatype in typescript
+var str1 = "Double quote"; //string
+var str2 = "Single quote";
+var str3 = "backtick \n".concat(str1, " quote"); //backtick supports line break
+var num1 = 3;
+var num2 = 3.14; //type number
+var num3 = 3.14; //type 3.14
+var bool = true;
+var bool2 = false;
+// 0 "" null undefined falsy
+console.log(str3);

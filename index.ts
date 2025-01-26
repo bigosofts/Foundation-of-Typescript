@@ -1,18 +1,17 @@
-//variable in Typescript
+//datatype in typescript
 
-//datatype is infered during initialization in typescript
+let str1 = "Double quote"; //string
+let str2 = "Single quote";
+let str3 = `backtick 
+${str1} quote`; //backtick supports line break
 
-//only take letter, digit, underscrore and dollar sign for variable naming
+let num1 = 3;
+let num2 = 3.14; //type number
+const num3 = 3.14; //type 3.14
 
-//first character not be a digit
+let bool = true;
+let bool2 = false;
 
-//variable names are case sensitive
+// 0 "" null undefined falsy
 
-//typescript resereved name can not be used
-
-let num_one_1$ = 100;
-num_one_1$ = "hello23"; //error
-console.log(num_one_1$);
-
-const str = "Hello World!";
-console.log(str);
+console.log(str3);
