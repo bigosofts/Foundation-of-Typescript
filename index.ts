@@ -1,22 +1,39 @@
-//type assignment
+//typescript object
 
-function add(num1, num2) {
-  return num1 + num2;
-}
+let person = {
+  name: "John",
+  age: 30,
+}; //typescript infer here the type
 
-console.log(add(3, 4)); //7
-console.log(add("2", "4")); //24
+person = {
+  mark: "30", //error in ts but ok in js
+  age: 25,
+};
+//we can assign another object to javascript but not in typescript
 
-//no errror because we did not define any deta type yet
+//we can not add more property to object in TS but can do in JS
 
-function add2(num1: number, num2: number) {
-  return num1 + num2;
-}
-console.log(add2("2", "4")); //error
-console.log(add2(2, 4)); //right
+// typescript give error if try to assign different property within obect
 
-let n1: number = 10;
-//or
-let n2 = 10; //type inferance
+person = {
+  name: "30",
+  age: 25,
+  gender: "male", //error in ts but ok in js
+};
 
-n1 = "string"; //error
+console.log(person);
+
+let typedObject: {
+  name: string;
+  age: number;
+} = {
+  age: 30,
+  name: "limon",
+}; // make type of an object. you can not assign other property or value other than type property
+
+let typedObject2: object = {
+  age: 30,
+  name: "limon",
+};
+
+console.log(typedObject2.gender); //error because type object does not specify gender property. TS not sure about this
