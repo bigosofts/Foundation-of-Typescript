@@ -1,39 +1,11 @@
-//typescript object
+//Typescript array
 
-let person = {
-  name: "John",
-  age: 30,
-}; //typescript infer here the type
+let person = ["john", 28, "male", 1000]; // typescript infer person type is (string | number)[]
 
-person = {
-  mark: "30", //error in ts but ok in js
-  age: 25,
-};
-//we can assign another object to javascript but not in typescript
+person.push(true); // error because type infered as string or number, not boolean
 
-//we can not add more property to object in TS but can do in JS
+let stringArray: string[] = [20, "Limon"]; //error because we define type as string array
 
-// typescript give error if try to assign different property within obect
+let mixedArray1: string[] = ["limon", "hello"]; //right in Typescript
 
-person = {
-  name: "30",
-  age: 25,
-  gender: "male", //error in ts but ok in js
-};
-
-console.log(person);
-
-let typedObject: {
-  name: string;
-  age: number;
-} = {
-  age: 30,
-  name: "limon",
-}; // make type of an object. you can not assign other property or value other than type property
-
-let typedObject2: object = {
-  age: 30,
-  name: "limon",
-};
-
-console.log(typedObject2.gender); //error because type object does not specify gender property. TS not sure about this
+let mixedArray2: (string | number)[] = [20, "Limon"]; //right in typescript because we define type as string or number array
