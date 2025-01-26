@@ -1,7 +1,5 @@
-//Typescript Literal Type
-//value we add in a const variable will be converted to type of that variable called literal type
-var str = "Hello World"; //here type is "Hello World" instead of string
-var str2 = "Hello World"; //here type string
+//Typescript Aliases
+var str = "string";
 function roleMessage(role) {
     switch (role) {
         case "admin":
@@ -18,5 +16,9 @@ function roleMessage(role) {
             break;
     }
 }
-//we use literal type in function parameter . Notice that it is not string , it is named typed
 roleMessage("read-write");
+function getFullName(user) {
+    console.log("".concat(user.firstName, " ").concat(user.lastName));
+}
+var user = { firstName: "Abdullah", lastName: "Al Amin" };
+getFullName(user);
