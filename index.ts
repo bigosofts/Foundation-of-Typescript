@@ -1,1 +1,1 @@
-console.log("Foundation of Typescript");
+console.log("Foundation of Typescript 1");
