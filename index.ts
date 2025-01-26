@@ -1,16 +1,44 @@
-//Typescript function return type
+//Typescript function as a type
 
-function add(num1: number, num2: number) {
-  return num1 + num2;
+// type User = { name: string; age: number };
+
+// function createUser(user: User) {
+//   console.log(`Greeting ${user.name} at your ${user.age} years old age`);
+// }
+
+// let greet;
+
+// greet = createUser;
+// let user: User = { name: "Limon", age: 30 };
+
+// greet = 100;
+
+// greet(user);
+
+// no error in compilation but show error in runtime because we change greet function to value .It is no longer a function
+
+type User = { name: string; age: number };
+
+function createUser(user: User) {
+  console.log(`Greeting ${user.name} at your ${user.age} years old age`);
 }
-// typescript inferred return type as number add(num1: number, num2: number): number
 
-function add2(num1: number, num2: number) {
-  return (num1 + num2).toString();
-} // inferred as string return type. add2(num1: number, num2: number): string
+// let greet: Function;
+let greet: (user: User) => void; //explicitly call function type that take user object and return void
 
-function add3(num1: number, num2: number): object {
-  return "null"; //it will throw error because return type will be object
+greet = createUser;
+let user: User = { name: "Limon", age: 30 };
+
+//greet = 100;
+
+// now we can not change greet to other value instead of function
+
+function sum(num: number) {
+  console.log("something");
 }
 
-console.log(add2(10, 12));
+// greet = sum;
+
+//but we can assign any function to it
+
+greet(user);
