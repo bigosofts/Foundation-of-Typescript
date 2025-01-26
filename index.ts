@@ -1,17 +1,22 @@
-//datatype in typescript
+//type assignment
 
-let str1 = "Double quote"; //string
-let str2 = "Single quote";
-let str3 = `backtick 
-${str1} quote`; //backtick supports line break
+function add(num1, num2) {
+  return num1 + num2;
+}
 
-let num1 = 3;
-let num2 = 3.14; //type number
-const num3 = 3.14; //type 3.14
+console.log(add(3, 4)); //7
+console.log(add("2", "4")); //24
 
-let bool = true;
-let bool2 = false;
+//no errror because we did not define any deta type yet
 
-// 0 "" null undefined falsy
+function add2(num1: number, num2: number) {
+  return num1 + num2;
+}
+console.log(add2("2", "4")); //error
+console.log(add2(2, 4)); //right
 
-console.log(str3);
+let n1: number = 10;
+//or
+let n2 = 10; //type inferance
+
+n1 = "string"; //error
