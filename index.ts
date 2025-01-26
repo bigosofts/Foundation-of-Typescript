@@ -1,11 +1,26 @@
-//Typescript Any Type
+//Typescript Union Type
 
-let dynamicData: any;
+let user: {
+  name: string;
+  age: number;
+} | null = null; // '|' pipe symbol to make 'or' type called union type
 
-dynamicData = {}; //can assign any type
+function getUser() {
+  const uName = "John";
+  const uAge = 28;
+  user = {
+    name: uName,
+    age: uAge,
+  };
 
-let arr: any[];
+  return user;
+}
 
-arr = [1, true]; //assign any element in array
+console.log(getUser());
 
-let test; // automatic any
+function printStatus(message: string, code: string | number) {
+  console.log(`${message}. Status Code: ${code}`);
+}
+
+printStatus("Successfully done", 200);
+printStatus("Successfully done", "200");
