@@ -1,37 +1,16 @@
-//Typescript Aliases
+//Typescript function return type
 
-type stringType = string;
+function add(num1: number, num2: number) {
+  return num1 + num2;
+}
+// typescript inferred return type as number add(num1: number, num2: number): number
 
-let str: stringType = "string";
+function add2(num1: number, num2: number) {
+  return (num1 + num2).toString();
+} // inferred as string return type. add2(num1: number, num2: number): string
 
-type messageType = "admin" | "read" | "read-write";
-
-function roleMessage(role: messageType) {
-  switch (role) {
-    case "admin":
-      console.log("You have admin permission");
-      break;
-
-    case "read":
-      console.log("You have Read permission");
-      break;
-    case "read-write":
-      console.log("You have Read write permission");
-      break;
-    default:
-      console.log("Unknown command");
-      break;
-  }
+function add3(num1: number, num2: number): object {
+  return "null"; //it will throw error because return type will be object
 }
 
-roleMessage("read-write");
-
-type UserType = { firstName: string; lastName: string };
-
-function getFullName(user: UserType) {
-  console.log(`${user.firstName} ${user.lastName}`);
-}
-
-let user: UserType = { firstName: "Abdullah", lastName: "Al Amin" };
-
-getFullName(user);
+console.log(add2(10, 12));

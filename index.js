@@ -1,24 +1,12 @@
-//Typescript Aliases
-var str = "string";
-function roleMessage(role) {
-    switch (role) {
-        case "admin":
-            console.log("You have admin permission");
-            break;
-        case "read":
-            console.log("You have Read permission");
-            break;
-        case "read-write":
-            console.log("You have Read write permission");
-            break;
-        default:
-            console.log("Unknown command");
-            break;
-    }
+//Typescript function return type
+function add(num1, num2) {
+    return num1 + num2;
 }
-roleMessage("read-write");
-function getFullName(user) {
-    console.log("".concat(user.firstName, " ").concat(user.lastName));
+// typescript inferred return type as number add(num1: number, num2: number): number
+function add2(num1, num2) {
+    return (num1 + num2).toString();
+} // inferred as string return type. add2(num1: number, num2: number): string
+function add3(num1, num2) {
+    return "null"; //it will throw error because return type will be object
 }
-var user = { firstName: "Abdullah", lastName: "Al Amin" };
-getFullName(user);
+console.log(add2(10, 12));
