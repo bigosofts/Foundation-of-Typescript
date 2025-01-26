@@ -1,1 +1,1 @@
-console.log("Foundation of Typescript 1");
+console.log("Foundation of Typescript Lecture 1");
