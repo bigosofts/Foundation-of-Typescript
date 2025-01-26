@@ -1,26 +1,29 @@
-//Typescript Union Type
+//Typescript Literal Type
 
-let user: {
-  name: string;
-  age: number;
-} | null = null; // '|' pipe symbol to make 'or' type called union type
+//value we add in a const variable will be converted to type of that variable called literal type
 
-function getUser() {
-  const uName = "John";
-  const uAge = 28;
-  user = {
-    name: uName,
-    age: uAge,
-  };
+const str = "Hello World"; //here type is "Hello World" instead of string
 
-  return user;
+let str2 = "Hello World"; //here type string
+
+function roleMessage(role: "admin" | "read" | "read-write") {
+  switch (role) {
+    case "admin":
+      console.log("You have admin permission");
+      break;
+
+    case "read":
+      console.log("You have Read permission");
+      break;
+    case "read-write":
+      console.log("You have Read write permission");
+      break;
+    default:
+      console.log("Unknown command");
+      break;
+  }
 }
 
-console.log(getUser());
+//we use literal type in function parameter . Notice that it is not string , it is named typed
 
-function printStatus(message: string, code: string | number) {
-  console.log(`${message}. Status Code: ${code}`);
-}
-
-printStatus("Successfully done", 200);
-printStatus("Successfully done", "200");
+roleMessage("read-write");
