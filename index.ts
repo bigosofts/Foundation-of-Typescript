@@ -1,10 +1,30 @@
-//Typescript Including or excluding file
+//Typescript Compilation Target
 
-console.log("Something Code");
+//while lib is commented .lib will automatically inferred in typescript
 
-// Typescript: "exclude":["node_modules"]  if mention exclude option then we need to specify node_modules there ...If not use "exclude " option than node_modules will be automatically set to exclude
+const button = document.getElementById("button")!; //tell TS that button will exist using "!"
 
-//"include": ["app.ts", "src"]  here only app.ts and all file inside folder src will be compiled
+button.addEventListener("click", () => {
+  console.log("Button is clicked");
+});
+
+// while lib is uncommented then it will show error because library need to mention explicitly
+
+const map = new Map();
+
+// "lib": [
+//   "es2016",
+//   "dom"
+// ]
+
+//we tell TS that library should include es2016 and dom features
 
 
-//"files":[] it will only add file path not folder path .most case we use include exclude option
+// "lib": [
+//   "es2016",
+//   "dom",
+//   "DOM.Iterable",
+//   "ScriptHost"
+// ]
+
+//these is set by default in lib
