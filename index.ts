@@ -1,10 +1,10 @@
-//Typescript never type
+//Typescript configuration
 
-function createError(errormsg: string, errorcode: number): never {
-  throw {
-    message: errormsg,
-    code: errorcode,
-  };
-} // when we never want to return a value we can set return type as never type ..Throw will exit function and never return anything
+console.log("Something Code");
 
-console.log(createError("Something error", 500)); //we see undefined in return type void . but return type never will log nothing
+//npx tsc index.ts -w   //it will compile index.ts when it is changed
+
+// npx tsc --init
+
+//then only need npx tsc -w  to compile all the project ts file
+
