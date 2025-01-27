@@ -1,16 +1,18 @@
-//Typescript function as a type
-function createUser(user) {
-    console.log("Greeting ".concat(user.name, " at your ").concat(user.age, " years old age"));
+//Typescript function type for callback
+var addNumbers;
+function sum(num1, num2) {
+    return num1 + num2;
 }
-// let greet: Function;
-var greet; //explicitly call function type that take user object and return void
-greet = createUser;
-var user = { name: "Limon", age: 30 };
-//greet = 100;
-// now we can not change greet to other value instead of function
-function sum(num) {
-    console.log("something");
+function add(num1, num2) {
+    console.log(num1 + num2);
 }
-// greet = sum;
-//but we can assign any function to it
-greet(user);
+addNumbers = sum; //right
+addNumbers = add; //error
+function getResult(num1, num2, print) {
+    var result = num1 + num2;
+    print("Sum :", result);
+}
+function display(msg, result) {
+    console.log(msg + result);
+}
+getResult(20, 30, display);
