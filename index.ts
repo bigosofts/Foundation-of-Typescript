@@ -1,28 +1,24 @@
-//Typescript function type for callback
+//Typescript unknow type
 
-let addNumbers: (n1:number , n2: number) => number;
+let inputVal: unknown;
 
-function sum(num1:number, num2:number){
-  return num1+num2;
-}
+inputVal = 100;
+inputVal = "hello";
+inputVal = [1, 2, 3];
 
-function add(num1:number, num2:number){
-  console.log(num1+ num2);
-}
+//when we want to use any , it will be any data type
 
+//when use unknown when we do not know what type it is
 
-addNumbers = sum;  //right
-addNumbers = add; //error
+let inputvalue: unknown; //if any then it will work. but "unknown" is not assignable to string
 
-function getResult(num1:number, num2:number, print: (str:string, rst: number)=>void){
-  const result = num1 + num2;
-  print("Sum :" , result)
-}
+let uName: string;
 
+inputvalue = 100;
 
-function display(msg: string, result: number){
-  console.log(msg + result);
-}
-
-
-getResult(20,30,display);
+//uName = inputvalue //error in unknown type but ok with any type
+console.log(typeof inputvalue);
+if (typeof inputvalue == "string") {
+  console.log(typeof inputvalue);
+  uName = inputvalue;
+} //we need manual checking for unknown type
