@@ -1,24 +1,10 @@
-//Typescript unknow type
+//Typescript never type
 
-let inputVal: unknown;
+function createError(errormsg: string, errorcode: number): never {
+  throw {
+    message: errormsg,
+    code: errorcode,
+  };
+} // when we never want to return a value we can set return type as never type ..Throw will exit function and never return anything
 
-inputVal = 100;
-inputVal = "hello";
-inputVal = [1, 2, 3];
-
-//when we want to use any , it will be any data type
-
-//when use unknown when we do not know what type it is
-
-let inputvalue: unknown; //if any then it will work. but "unknown" is not assignable to string
-
-let uName: string;
-
-inputvalue = 100;
-
-//uName = inputvalue //error in unknown type but ok with any type
-console.log(typeof inputvalue);
-if (typeof inputvalue == "string") {
-  console.log(typeof inputvalue);
-  uName = inputvalue;
-} //we need manual checking for unknown type
+console.log(createError("Something error", 500)); //we see undefined in return type void . but return type never will log nothing
