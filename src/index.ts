@@ -1,27 +1,28 @@
-//Typescript class access modifier
+//Typescript class shorthand property
+
 
 class Employee {
-  public empName: string; //by default it is alwas public
-  private salary: number;
-  readonly baseLocation: string; //only can be read
-  isEligible: boolean;
-  private hikePercent: number;
+  //public empName: string;
+  //private salary: number;
+  //readonly baseLocation: string;
+  //isEligible: boolean;
+  //private hikePercent: number;
 
   constructor(
-    name: string,
-    sal: number,
-    loc: string,
-    isEligible: boolean,
-    hikePer: number
+    public empName: string, //if we use access modifier here, we can remove property from above and assignment below as well
+    private salary: number,
+    readonly baseLocation: string,
+    public isEligible: boolean,
+    private hikePercent: number
   ) {
-    this.empName = name;
-    this.salary = sal;
-    this.baseLocation = loc;
-    this.isEligible = isEligible;
-    this.hikePercent = hikePer;
+    //this.empName = name;
+    // this.salary = sal;
+    // this.baseLocation = loc;
+    // this.isEligible = isEligible;
+    // this.hikePercent = hikePer;
   }
 }
 
 const employee = new Employee("Abdullah", 30000, "Dhaka", true, 10);
 
-console.dir(employee.baseLocation);
+console.dir(employee.empName);
