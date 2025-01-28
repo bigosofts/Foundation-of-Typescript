@@ -1,5 +1,5 @@
 "use strict";
-//Typescript class shorthand property
+//Typescript protected modifier
 class Employee {
     //public empName: string;
     //private salary: number;

@@ -1,4 +1,4 @@
-//Typescript class shorthand property
+//Typescript protected modifier
 
 class Employee {
   //public empName: string;
