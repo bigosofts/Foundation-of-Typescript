@@ -1,8 +1,16 @@
-//Typescript Typecasting in tpescript
+//Typescript Indexed property
 
-let fName = <HTMLInputElement>document.getElementById("fName")!;
+//indexed property is the property which name is unknow before using it
 
-// let fName = document.getElementById("fName")! as HTMLInputElement; //another way
+interface Product {
+  id: number;
+  name: string;
+  [prop: string]: string | number; //property unknown
+}
 
-fName.value = "John";
-console.log(fName.value);
+
+const product1: Product = {
+  id: 1,
+  name:"Book",
+  value: 10
+}
