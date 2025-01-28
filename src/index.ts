@@ -1,6 +1,5 @@
 //Typescript class shorthand property
 
-
 class Employee {
   //public empName: string;
   //private salary: number;
@@ -13,7 +12,7 @@ class Employee {
     private salary: number,
     readonly baseLocation: string,
     public isEligible: boolean,
-    private hikePercent: number
+    private hikePercent: number // another modifier is "protected" . This allow to access property within class and within child class
   ) {
     //this.empName = name;
     // this.salary = sal;

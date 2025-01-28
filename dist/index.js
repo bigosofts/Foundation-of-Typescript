@@ -7,7 +7,8 @@ class Employee {
     //isEligible: boolean;
     //private hikePercent: number;
     constructor(empName, //if we use access modifier here, we can remove property from above and assignment below as well
-    salary, baseLocation, isEligible, hikePercent) {
+    salary, baseLocation, isEligible, hikePercent // another modifier is "protected" . This allow to access property within class and within child class
+    ) {
         this.empName = empName;
         this.salary = salary;
         this.baseLocation = baseLocation;
