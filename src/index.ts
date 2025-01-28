@@ -1,27 +1,18 @@
-//Typescript protected modifier
+//Typescript singelton instance using class
 
-class Employee {
-  //public empName: string;
-  //private salary: number;
-  //readonly baseLocation: string;
-  //isEligible: boolean;
-  //private hikePercent: number;
+class Person {
+  private static _instance: Person;
 
-  constructor(
-    public empName: string, //if we use access modifier here, we can remove property from above and assignment below as well
-    private salary: number,
-    readonly baseLocation: string,
-    public isEligible: boolean,
-    private hikePercent: number // another modifier is "protected" . This allow to access property within class and within child class
-  ) {
-    //this.empName = name;
-    // this.salary = sal;
-    // this.baseLocation = loc;
-    // this.isEligible = isEligible;
-    // this.hikePercent = hikePer;
+  private constructor() {}
+  static getInstance() {
+    if (Person._instance) {
+      return Person._instance;
+    }
+    Person._instance = new Person();
+    return Person._instance;
   }
 }
 
-const employee = new Employee("Abdullah", 30000, "Dhaka", true, 10);
+const person1 = Person.getInstance(); //will give first instance
 
-console.dir(employee.empName);
+const person2 = Person.getInstance(); //will again give first instance , not new instance
